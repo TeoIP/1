@@ -5,13 +5,26 @@
    require 'phpmailer/src/Exception.php';
    require 'phpmailer/src/PHPMailer.php';
 
-   $mail = new PHPMailer(true);
+   $mail = new PHPMailer;
    $mail->Charset = 'UTF-8';
-   $mail->setLanguage('ro','phpmailer/language/');
-   $mail->IsHTML(true);
 
-   $mail->setFrom('liceul.teoretic@aldonici.ru', 'De la Tudor');
+   $name = $_POST['name'];
+   $email = $_POST['email'];
+   $phone = $_POST['phone'];
+   $message = $_POST['message'];
+
+   $mail->setLanguage('ro','phpmailer/language/');
+   $mail->IsSMTP();
+   $mail->Host = 'smtp.inbox.ru'
+   $mail->SMTPAuth = true;
+   $mail->UserName = 'liceul_teoretic_al_donici@inbox.ru';
+   $mail->Password = '#$$dr#$123$$#'Ș
+   $mail->SMTPSecure = 'ss1';
+   $mail->Port = 465;
+
+   $mail->setFrom('liceul_teoretic_al_donici@inbox.ru', 'De la Tudor');
    $mail->addAddress('tudorsirghi56@gmail.com');
+
    $mail->Subject = 'ceva interesant';
 
    $body = '<h1>Un mesaj nou</h1>';
@@ -32,12 +45,12 @@
    $mail->Body = $body;
 
    if (!$mail->send()) {
-      $message = 'Totul sa trimis';
+      $message1 = 'Totul sa trimis';
    } else{
-      $message = 'Ceva nu sa primit';
+      $message1 = 'Ceva nu sa primit';
    }
    
-   $response = ['message' => $message];
+   $response = ['message' => $message1];
    header('Content-type: application/json');
    echo json_encode($response);
 ?>
