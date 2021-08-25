@@ -1,3 +1,4 @@
+"use strict"
 //Fixed nav
 
 const nav = document.getElementById('nav');
@@ -90,7 +91,7 @@ let sliderReapeter = () => {
          slideNumber = 0;
       }
       oneSlide[slideNumber].classList.add('active_slide');
-   }, 4000);
+   }, 5000);
 };
 sliderReapeter();
 
@@ -140,22 +141,21 @@ document.addEventListener('DOMContentLoaded', function () {
       let formData = new FormData(mainForm);
 
       if (error === 0) {
-         formError.style.display = 'none'; 
-         formContainer.classList.add('_sendding')
+         formError.style.display = 'none';
          let response = await fetch('sendmail.php', {
             method: 'POST',
             body: formData
          });
+
          if (response.ok) {
             let result = await response.json();
-            alert(result.message);
             mainForm.reset();
-            formContainer.classList.remove('_sendding')
-         } else{
-
+            alert(result.message);
+         } else {
+            alert('error');
          }
-       } else {
-         formError.style.display = 'block'; 
+      } else {
+         formError.style.display = 'block';
       }
    }
 
@@ -168,14 +168,14 @@ document.addEventListener('DOMContentLoaded', function () {
          formRemoveError(input);
 
          if (input.classList.contains('_email')) {
-            if (emailTest(input)){
+            if (emailTest(input)) {
                formAddError(input);
                error++;
             }
-         }else if(input.getAttribute("type") === "checkbox" && input.checked === false){
+         } else if (input.getAttribute("type") === "checkbox" && input.checked === false) {
             formAddError(input);
             error++;
-         }else{
+         } else {
             if (input.value === '') {
                formAddError(input);
                error++;
