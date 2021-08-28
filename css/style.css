@@ -598,9 +598,6 @@ a {
       right: 0;
       transition: all 600ms ease-out;
    }
-   .nav_links-change {
-      font-size: 15px;
-   }
    .nav_hamburger::before {
       top: 0;
    }
@@ -671,7 +668,7 @@ a {
       transform: scale(0.95) perspective(1px);
    }
    .nav_links-change {
-      font-size: 25px;
+      font-size: 20px;
       line-height: 28px;
       font-weight: 400;
       margin-top: 10px;
