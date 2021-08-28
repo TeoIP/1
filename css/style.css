@@ -503,6 +503,7 @@ a {
    border: 1px solid black;
    font-size: 18px;
    font-weight: 700;
+   text-transform: uppercase;
    color: white;
    letter-spacing: 3px;
    box-shadow: 0 0 5px 0px gray;
@@ -605,6 +606,12 @@ a {
    }
    .nav_hamburger::after {
       bottom: 0;
+   }
+   .nav_menu_link{
+      margin-bottom: 5px;
+   }
+   .nav_shadow{
+      font-size: 20px;
    }
    .carousel_page_presentacion {
       padding: 50px 0;
@@ -732,6 +739,10 @@ a {
       border: 1px solid black;
       justify-content: center;
       margin: -10px 0;
+   }
+   .main_form_btn{
+      min-height: 40px;
+      font-size: 16px;
    }
    .main_diector_description_btn{
       max-width: 180px;
