@@ -197,24 +197,24 @@ a {
    transition: all 700ms ease-out;
 }
 .carousel_page_presentacion_one_slide-1 {
-   background: url("/img/carousel_1.jpg") no-repeat;
+   background: url("../img/carousel_1.jpg") no-repeat;
    background-size: cover;
    background-position: center;
 }
 .carousel_page_presentacion_one_slide-2 {
-   background: url("/img/carousel_2.jpg");
+   background: url("../img/carousel_2.jpg");
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
 }
 .carousel_page_presentacion_one_slide-3 {
-   background: url("/img/carousel_3.jpg");
+   background: url("../img/carousel_3.jpg");
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
 }
 .carousel_page_presentacion_one_slide-4 {
-   background: url("/img/carousel_4.jpg");
+   background: url("../img/carousel_4.jpg");
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
