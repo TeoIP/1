@@ -1,4 +1,4 @@
-"use strict"
+
 //Fixed nav
 
 const nav = document.getElementById('nav');
@@ -21,6 +21,7 @@ window.addEventListener('scroll', fixedNav);
 
 const hamburger = document.getElementById('nav_hamburger');
 const middleLine = document.getElementById('hamburger_line');
+const body = document.getElementById('body');
 
 const navLinks = document.getElementById('nav_links');
 
@@ -28,6 +29,7 @@ const navLinks = document.getElementById('nav_links');
 
 hamburger.addEventListener('click', () => {
    navLinks.classList.toggle('show');
+   body.classList.toggle('show');
 });
 hamburger.addEventListener('click', () => {
    middleLine.classList.toggle('active_line');
@@ -91,7 +93,7 @@ let sliderReapeter = () => {
          slideNumber = 0;
       }
       oneSlide[slideNumber].classList.add('active_slide');
-   }, 5000);
+   }, 4000);
 };
 sliderReapeter();
 
