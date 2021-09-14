@@ -2,11 +2,10 @@
 //Fixed nav
 
 const nav = document.getElementById('nav');
-const caroselHeight = document.querySelector('.carousel_page_presentacion');
-const topOfNav = caroselHeight.offsetHeight;
+const fixedNavHeight = 250;
 
 function fixedNav() {
-   if (window.scrollY >= topOfNav) {
+   if (window.scrollY >= fixedNavHeight) {
       nav.classList.add('fixed_nav');
    } else {
       nav.classList.remove('fixed_nav');
@@ -77,37 +76,6 @@ prevSlide.addEventListener('click', () => {
    oneSlide[slideNumber].classList.add('active_slide');
 });
 
-//Auto carosel
-
-let sliderPlay;
-
-let sliderReapeter = () => {
-   sliderPlay = setInterval(() => {
-      oneSlide.forEach((slide) => {
-         slide.classList.remove('active_slide');
-      });
-
-      slideNumber++;
-
-      if (slideNumber > (numberOfSlides - 1)) {
-         slideNumber = 0;
-      }
-      oneSlide[slideNumber].classList.add('active_slide');
-   }, 4000);
-};
-sliderReapeter();
-
-//Autoplay stop 
-allSlides.addEventListener('mouseover', () => {
-   clearInterval(sliderPlay);
-});
-
-//Autoplay start
-allSlides.addEventListener('mouseout', () => {
-   sliderReapeter();
-});
-
-
 //Director more info
 
 const moreInfoBtn = document.getElementById('main_director_description_btn');
@@ -151,8 +119,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
          if (response.ok) {
             let result = await response.json();
-            mainForm.reset();
             alert(result.message);
+            mainForm.reset();
          } else {
             alert('error');
          }
