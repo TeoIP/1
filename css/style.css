@@ -600,7 +600,7 @@ a {
    position: absolute;
    top: 15px;
    right: 15px;
-   background-image: url(../img/pencil.svg);
+   background-image: url("../img/pencil.svg");
    background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
@@ -612,7 +612,7 @@ a {
    position: absolute;
    bottom: 15px;
    left: 15px;
-   background-image: url(../img/book.svg);
+   background-image: url("../img/book.svg");
    background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
