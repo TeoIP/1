@@ -593,30 +593,6 @@ a {
    background-color: white;
 }
 /*Team page*/
-.team_main_photo::before {
-   content: " ";
-   width: 45px;
-   height: 45px;
-   position: absolute;
-   top: 15px;
-   right: 15px;
-   background-image: url("../img/pencil.svg");
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-}
-.team_main_photo::after {
-   content: " ";
-   width: 45px;
-   height: 45px;
-   position: absolute;
-   bottom: 15px;
-   left: 15px;
-   background-image: url("../img/book.svg");
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-}
 .team_main_title {
    border-bottom: 2px solid black;
 }
