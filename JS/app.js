@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
             method: 'POST',
             body: formData
          });
-
+         response();
          if (response.ok) {
             let result = await response.json();
             alert(result.message);
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
                formAddError(input);
                error++;
             }
-         } else if (input.getAttribute("type") === "checkbox" && input.checked === false) {
+         } else if (input.getAttribute('type') === "checkbox" && input.checked === false) {
             formAddError(input);
             error++;
          } else {
@@ -167,3 +167,5 @@ document.addEventListener('DOMContentLoaded', function () {
       return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
    }
 });
+
+
