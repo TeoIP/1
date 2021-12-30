@@ -877,9 +877,6 @@ a {
    visibility: hidden;
    transition: all 600ms ease-in;
 }
-body.block{
-   display: block;
-}
 .photo_main_image_list_popup.open{
    opacity: 1;
    visibility: visible;
