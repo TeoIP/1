@@ -785,24 +785,6 @@ a {
    position: relative;
    cursor: zoom-in;
 }
-.photo_main_image_list::before{
-   content: " ";
-   position: absolute;
-   top: 0;
-   left: 0;
-   transform: scale(0.92) perspective(1px);
-   width: 100%;
-   height: 100%;
-   background-color: rgba(0, 0, 0, 0.344);
-   border-radius: 24px;
-   z-index: 7;
-   opacity: 0;
-   transition: all 300ms ease-out;
-}
-.photo_main_image_list:hover:before{
-   opacity: 1;
-   transform: scale(1) perspective(1px);
-}
 .photo_main_image_list_component{
    width: 100%;
    height: auto;
@@ -884,28 +866,63 @@ a {
 .photo_main_image_list_component_popup{
    min-height:100%;
    display: flex;
+   margin: 10px 0;
    align-items: center;
    justify-content: center;
    position: relative;
 }
 .photo_main_image_list_component_popup_close{
    position: absolute;
-   right: 20px;
-   top: 20px;
+   right: 30px;
+   top: 10px;
    font-size: 20px;
    color: white;
    cursor: pointer;
 }
 .photo_main_image_list_popup_photo{
-   width: 60%;
-   height: 60%;
+   width: 82%;
+   top: 50%;
+   transform: translate(0,-100%);
    overflow: hidden;
+   position: absolute;
+   object-fit: cover;
+   transform: scale(0.94) perspective(1px);
+   transition: all 400ms ease-in-out;
+   opacity: 0;
+}
+.photo_main_image_list_popup_photo.active_photo{
+   transform: translate(0,-50%) scale(1) perspective(1px);
+   opacity: 1;
+   transition: all 400ms ease-in-out;
 }
 .photo_main_image_list_component_one_popup{
-   height: 100%;
+   height: auto;
    width: 100%;
    object-fit: cover;
    padding: 10px 20px;
+}
+.popup_button{
+   position: absolute;
+   outline: none;
+   background-color: rgba(255, 255, 255, 0.357);
+   border: 1px solid rgb(34, 31, 208);
+   border-radius: 100%;
+   padding: 10px;
+   z-index: 100;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   transition: background 300ms ease-out;
+}
+.popup_button:hover{
+   background-color: white;
+   transition: background 300ms ease-out;
+}
+.photo_main_image_list_component_popup_prev{
+   left: 1%;
+}
+.photo_main_image_list_component_popup_next{
+   right: 1%;
 }
 @media (max-width: 1000px) {
    .nav_hamburger::before,
