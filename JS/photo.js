@@ -62,6 +62,7 @@ const numberofPhoto = allPhoto.length;
 
 let photoNumber = 0;
 
+// Next photo
 nextPhoto.addEventListener('click', () => {
    allPhoto.forEach((photo) => {
       photo.classList.remove('active_photo');
@@ -75,6 +76,7 @@ nextPhoto.addEventListener('click', () => {
    allPhoto[photoNumber].classList.add('active_photo');
 });
 
+//Prev photo
 prevPhoto.addEventListener('click', () => {
    allPhoto.forEach((photo) => {
       photo.classList.remove('active_photo');
