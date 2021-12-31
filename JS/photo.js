@@ -34,6 +34,8 @@ hamburger.addEventListener('click', () => {
    middleLine.classList.toggle('active_line');
 });
 
+
+//Open the album 
 const popUp = document.querySelector('.photo_main_image_list_popup');
 const popUpLinks = document.querySelectorAll('.popup_link');
 
@@ -49,3 +51,39 @@ if (popUpLinks.length > 0) {
          body.classList.toggle('show');
       });
    }};
+
+
+//Album scroll
+const prevPhoto = document.getElementById('popup_prev');
+const nextPhoto = document.getElementById('popup_next');
+
+const allPhoto = document.querySelectorAll('.photo_main_image_list_popup_photo');
+const numberofPhoto = allPhoto.length;
+
+let photoNumber = 0;
+
+nextPhoto.addEventListener('click', () => {
+   allPhoto.forEach((photo) => {
+      photo.classList.remove('active_photo');
+   });
+   photoNumber++;
+
+   if (photoNumber > ( numberofPhoto - 1)) {
+      photoNumber = 0;
+   }
+
+   allPhoto[photoNumber].classList.add('active_photo');
+});
+
+prevPhoto.addEventListener('click', () => {
+   allPhoto.forEach((photo) => {
+      photo.classList.remove('active_photo');
+   });
+   photoNumber--;
+
+   if (photoNumber < 0) {
+      photoNumber = numberofPhoto - 1;
+   }
+
+   allPhoto[photoNumber].classList.add('active_photo');
+});
