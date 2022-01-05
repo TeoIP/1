@@ -23,6 +23,9 @@ dl,
 dd {
    margin: 0;
 }
+html,body{
+   height: 100%;
+}
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;800;900&family=Open+Sans+Condensed:wght@300&family=PT+Sans:wght@700&display=swap");
 body {
    font-family: "Fira Sans", sans-serif;
@@ -600,31 +603,38 @@ a {
 /*Team page*/
 .team_main_title,
 .news_main_title,
-.photo_main_title {
+.photo_main_title,
+.contact_main_title
+{
    border-bottom: 2px solid black;
    background-color: #114b7427;
 }
 .team_main_wrapper,
 .news_main_wrapper,
-.photo_main_title_wrapper {
+.photo_main_title_wrapper ,
+.contact_main_wrapper
+{
    padding: 15px;
 }
 .team_main_title_word,
 .news_main_title_word ,
-.photo_main_title_word
+.photo_main_title_word,
+.contact_main_title_word
 {
    font-size: 28px;
    font-weight: 700;
 }
 .team_main_title_link,
 .news_main_title_link,
-.photo_main_title_link
+.photo_main_title_link,
+.contact_main_title_link
 {
    color: #687e52;
 }
 .team_main_title_link:hover,
 .news_main_title_link:hover,
-.photo_main_title_link:hover
+.photo_main_title_link:hover,
+.contact_main_title_link:hover
 {
    opacity: 0.35;
    transition: all 250ms ease-out;
@@ -829,17 +839,20 @@ a {
 .photo_main_button_view::before{
    content: " ";
    position: absolute;
-   width: 28%;
-   top: 0;
+   width: 10%;
+   top: 50%;
+   transform: translateY(-50%);
    left: 0;
-   height: 100%;
+   height: 50%;
    border-radius: 24px;
    background-color: #013a63;
-   transition: all 300ms ease-out;
+   transition: all 400ms ease-out;
 }
 .photo_main_button_view:hover:before
 {
    width: 100%;
+   height: 100%;
+   transition: all 400ms ease-out;
 }
 .photo_main_button_view:hover .photo_main_button_arrow{
    transform: translateX(0);
@@ -857,11 +870,11 @@ a {
    left: 0;
    opacity: 0;
    visibility: hidden;
-   transition: all 600ms ease-in;
 }
 .photo_main_image_list_popup.open{
    opacity: 1;
    visibility: visible;
+   transition: all 300ms ease-out;
 }
 .photo_main_image_list_component_popup{
    min-height:100%;
@@ -887,13 +900,13 @@ a {
    position: absolute;
    object-fit: cover;
    transform: scale(0.94) perspective(1px);
-   transition: all 400ms ease-in-out;
+   transition: all 300ms ease-in-out;
    opacity: 0;
 }
 .photo_main_image_list_popup_photo.active_photo{
    transform: translate(0,-50%) scale(1) perspective(1px);
    opacity: 1;
-   transition: all 400ms ease-in-out;
+   transition: all 300ms ease-in-out;
 }
 .photo_main_image_list_component_one_popup{
    height: auto;
@@ -923,6 +936,73 @@ a {
 }
 .photo_main_image_list_component_popup_next{
    right: 1%;
+}
+/*Contacts*/
+.contact_main_info_content{
+   height: 100%;
+}
+.contact_main_info_body{
+   position: relative;
+   max-width: 1400px;
+   margin: 0 auto;
+}
+.contact_main_info_all_info{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 15px 0;
+   margin: 0 10px;
+}
+.contact_main_info_map{
+   max-width: 700px;
+   max-height: 625px;
+   padding: 5px;
+   margin: 10px;
+   border: 1px solid black;
+   width: 100%;
+}
+.contact_main_info_map_change{
+   width: 100%;
+   border: none;
+}
+.conact_main_info_another_info{
+   position: relative;
+   width: 100%;
+   flex-direction: column;
+   display: flex;
+   align-items: center;
+}
+.conact_main_info_another_info::before{
+   content: " ";
+   position: absolute;
+   top: 0;
+   width: 100%;
+   height: 2px;
+   background-color: black;
+}
+.conact_main_info_another_info_email_link ,
+.conact_main_info_another_info_phone_link
+{
+   color: #1a8386;
+}
+.conact_main_info_another_info_email ,
+.conact_main_info_another_info_phone
+{
+   font-size: 20px;
+   font-weight: 600;
+   color: rgb(109, 109, 179);
+   display: flex;
+   padding: 5px;
+}
+.page{
+   min-height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+.main{
+   position: relative;
+   flex: 1 1 auto;
 }
 @media (max-width: 1000px) {
    .nav_hamburger::before,
@@ -1115,6 +1195,10 @@ a {
    }
    .nav_logo_word {
       font-size: 25px;
+   }
+   .contact_main_info_map{
+      max-width: 1200px;
+      max-height: 1450px;
    }
 }
 @media (max-width: 565px) {

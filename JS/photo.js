@@ -46,11 +46,13 @@ const timeout = 600;
 if (popUpLinks.length > 0) {
    for (let index = 0; index < popUpLinks.length; index++) {
       const popUpLink = popUpLinks[index];
-      popUpLink.addEventListener('click', ()=>{
-         popUp.classList.toggle('open');
-         body.classList.toggle('show');
+      popUpLink.addEventListener('click', () => {
+         popUp.classList.add('open');
+         body.classList.add('show');
+         allPhoto[0].classList.add('active_photo')
       });
-   }};
+   }
+};
 
 
 //Album scroll
@@ -69,7 +71,7 @@ nextPhoto.addEventListener('click', () => {
    });
    photoNumber++;
 
-   if (photoNumber > ( numberofPhoto - 1)) {
+   if (photoNumber > (numberofPhoto - 1)) {
       photoNumber = 0;
    }
 
@@ -88,4 +90,17 @@ prevPhoto.addEventListener('click', () => {
    }
 
    allPhoto[photoNumber].classList.add('active_photo');
+});
+
+
+//Close poppup
+const closePopup = document.getElementById('popup_close');
+
+closePopup.addEventListener('click', ()=>{
+   popUp.classList.remove('open');
+   body.classList.remove('show');
+   allPhoto.forEach((photo) =>{
+      photo.classList.remove('active_photo');
+   });
+   photoNumber = 0;
 });
